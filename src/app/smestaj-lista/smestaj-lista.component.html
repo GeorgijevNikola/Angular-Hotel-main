@@ -1,0 +1,27 @@
+<table class="ui celled table">
+  <thead>
+    <tr>
+      <th>Naziv</th>
+      <th>Broj Kreveta</th>
+      <th>Cena Po Noći</th>
+      <th>Klima</th>
+      <th>Mini Bar</th>
+      <th>Sauna</th>
+      <th>Akcije</th> <!-- Add a new column for actions -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let smestaj of smestaji">
+      <td>{{ smestaj?.naziv }}</td>
+      <td>{{ smestaj?.brojKreveta }}</td>
+      <td>{{ smestaj?.cenaPoNoci }}</td>
+      <td>{{ smestaj?.klima ? 'Da' : 'Ne' }}</td>
+      <td>{{ smestaj?.miniBar ? 'Da' : 'Ne' }}</td>
+      <td>{{ smestaj?.sauna ? 'Da' : 'Ne' }}</td>
+      <td>
+        <button class="ui red button" (click)="obrisiSobu(smestaj)">Obriši</button>
+        <button class="ui blue button" (click)="izmeniSobu(smestaj)">Izmeni</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
